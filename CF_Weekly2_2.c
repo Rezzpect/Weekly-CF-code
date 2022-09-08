@@ -4,11 +4,26 @@
 #include<stdio.h>
 int main()
 {
-    int a[2];
+    float i,a[2],ans,b=0;
     printf("Enter first and second number : ");
-    scanf("%d",&a[0]);
-    scanf("%d",&a[1]);
-    printf("%d %d",a[0],a[1]);
-    printf(" %d ",a[0]+a[1]);
-    printf("Result: Addition = %d | Subtraction = %d | Multiplication = %d | Divison = %d",a[0]+a[1],a[0]-a[1],a[0]*a[1],a[0]/a[1]);
+    scanf("%f",&a[0]);
+    scanf("%f",&a[1]);
+    ans=a[0];
+    for(i=1;i<=a[1];i++){
+        ++ans;
+    }
+    printf("Addition result is %.2f\n",ans);
+    ans=a[0];
+    for(i=1;i<=a[1];i++){
+        --ans;
+    }
+    printf("Subtraction result is %.2f\n",ans);
+    ans=a[0];
+    for(i=1;i<a[1];i++){
+        ans+=a[0];
+    }
+    printf("Multiplication result is %.2f\n",ans);
+    ans=a[0]/a[1];
+    printf("Division result is %.2f",ans);
+
 }
