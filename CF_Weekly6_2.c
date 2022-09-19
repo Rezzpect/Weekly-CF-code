@@ -1,17 +1,29 @@
-//ให้นักศึกษาเขียนโปรแกรมเพื่อรับข้อมูล String 1 ชุด แล้วแสดงผลลัพธ์โดยเปลี่ยนตัวอักษรตัวพิมพ์เล็กให้กลายเป็นตัวอักษรตัวพิมพ์ใหญ่ 
-//และตัวอักษรตัวพิมพ์ใหญ่ กลายเป็นตัวอักษรตัวพิมพ์เล็กเช่นรับข้อมูล AbcDefg จะแสดงผล aBCdEFG (Level 3)
+/*
+จงเขียนโปรแกรมรับตัวเลข 1 ตัวแล้วให้คอมพิวเตอร์วาดรูปเครื่องหมาย * เป็นสี่เหลี่ยมที่มีด้านเท่ากับตัวเลขที่รับเข้ามา ดังตัวอย่าง (Level 2)
+*/
 #include<stdio.h>
-#include <ctype.h>
-
 int main(){
-   char str[100];
-   printf("Enter a string: ");
-   scanf("%s",str);
-   for(int i=0;str[i]!='\0';i++){
-      if(isupper(str[i]) ) {
-      printf("%c ", tolower(str[i]) );
-      } 
-      else {printf("%c ", toupper(str[i]) );
-      }
-   }
+    int row=1,column=1,n;
+    printf("enter num: ");
+    scanf("%d",&n);
+    while(1){
+        if(row<=n){
+            if(row==1||row==n||column==1||column==n){
+               printf("*");
+               row++;
+            }
+            else{
+               printf(" ");
+               row++;
+            }
+        }
+        else{
+            printf("\n");
+            column++;
+            row=1;
+        }
+        if(column>n){
+            break;
+        }
+    }
 }
